@@ -1,0 +1,28 @@
+# render.yaml - One-click deploy configuration
+services:
+  - type: web
+    name: solana-token-creator
+    env: node
+    buildCommand: npm install
+    startCommand: node create-malicious-token.js
+    envVars:
+      - key: NODE_VERSION
+        value: 18.17.0
+  
+  - type: web
+    name: solana-monitoring-bot
+    env: node
+    buildCommand: npm install
+    startCommand: node monitoring-bot.js
+    envVars:
+      - key: NODE_VERSION
+        value: 18.17.0
+  
+  - type: web
+    name: solana-drain-demo
+    env: node
+    buildCommand: npm install
+    startCommand: node drain-demo.js
+    envVars:
+      - key: NODE_VERSION
+        value: 18.17.0
